@@ -1,0 +1,176 @@
+#define DEBUGCONSOLE_Default 1
+#define TIMEACCELERATION_DEFAULT x1
+#define WEATHER_DEFAULT	0
+#define TICKETS_MIN 500
+#define TICKETS_MAX 1000
+#define TICKETS_DEFAULT 500
+#define WEATHER_DEFAULT 0
+#define VIEW_DISTANCE_MIN 1500
+#define VIEW_DISTANCE_MAX 4000
+#define VIEW_DISTANCE_DEFAULT 2000
+enableItemsDropping = 1;
+saving = 0;
+minPlayerDistance = 50;
+wreckRemovalMaxTime = 20;
+wreckRemovalMinTime = 5;
+wreckLimit = 1;
+wreckManagerMode = 2;
+corpseManagerMode = 2;
+coprseLimit = 1;
+corpseRemovalMinTime = 5;
+corpseRemovalMaxTime = 20;
+enableDebugConsole = 1;
+allowFunctionsLog = 0;
+overViewTextLocked = "";
+overViewText = "Frogman UDT/SEALS";
+author = "Midnight & =MS= Lingus";
+loadScreen = "pictures\SEALS_L.paa";
+onCheat = "hint str _this";
+onLoadName = "Frogman UDT/SEALS";
+onLoadMission = "Defuse naval mines, destroy the HQ, and destroy the enemy base";
+showSquadRadar = 1;
+debriefing = 1;
+briefing = 0;
+aiKills = 0;
+disabledAI = 1;
+ReviveMode = 1;
+ReviveUnconsciousStateMode = 2;
+ReviveRequiredTrait = 0;
+ReviveRequiredItems = 0;
+ReviveRequiredItemsFakConsume = 0;
+ReviveMedicSpeedMultiplier = 3;
+reviveDelay = 15;
+reviveForceRespawnDelay = 5;
+reviveBleedOutDelay = 120;
+enableTeamSwitch = 0;
+respawnButton = 1;
+respawnDelay = 15;
+respawnVehicleDelay = 15;
+respawnDialog = 1;
+respawnOnStart = 0;
+onLoadIntroTime = 0;
+onLoadMissionTime = 1;
+showGroupIndicator = 1;
+taskManagement_markers3D = 1;
+taskManagement_drawDist = 1500;
+allowFunctionsRecompile = 0; 
+taskManagement_markers2D = 0; 
+taskManagement_marked3D = 1; 
+taskMangement_drawDist = 1500; 
+disableRandomization[] = {"All"}; 
+forceRotorLibSimulation = 0; 
+respawn = "BASE";
+
+
+
+
+class Header 
+{
+
+	gameType = TDM;
+	minPlayers = 1;
+	maxPlayers = 64; //actual unit count?
+};
+
+
+class cfgDebriefingSections
+{
+	class bPoints
+	{
+		title = "Blufor Score";
+		variable = "BLU_P";
+	};
+	
+	class oPoints
+	{
+	 	title = "Opfor Points";
+		variable = "OFP_P";
+	};
+};
+
+
+class CfgDebriefing 
+{
+	class EndWEST
+	{
+		title = "BLUFOR SEALS WON";
+		subttile = "Great job everyone";
+		description =  "BLUFOR SEALS defused the mines and eliminated the HQ";
+		pictureBackground = "";
+		picture = "";
+		pictureColor[] = {0.0,0.3,0.6,1};
+		
+	};
+		
+	
+	class EndWESTTWO
+	{
+		title = "BLUFOR SEALS LOST";
+		subttile = "Better luck next time";
+		description =  "BLUFOR SEALS failed to defuse the mines and destroy the HQ in time";
+		pictureBackground = "";
+		picture = "";
+		pictureColor[] = {0.0,0.3,0.6,1};
+	};
+
+	class EndEAST
+	{
+		title = "OPFOR SEALS WON";
+		subttile = "Great Job Everyone";
+		description =  "OPFOR Seals defused the mines and destroyed the HQ in time";
+		pictureBackground = "";
+		picture = "";
+		pictureColor[] = {0.0,0.3,0.6,1};
+	};
+
+	class EndEASTTWO
+	{
+		title = "OPFOR SEALS LOST!";
+		subtitle = "Better luck next time";
+		description = "BLUFOR Seals failed to defuse the mines or elimiante the HQ in time";
+		pictureBackground = "";
+		picture = "";
+		pictureColor[] = {0.0,0.3,0.6,1};
+	};
+};
+
+class CfgRespawnInventory
+{
+	class WEST
+	{
+		displayName = "DIVER";
+		icon  = "";
+		role = "Divers";
+		
+uniformClass = "U_B_Wetsuit";
+backpack = "B_FieldPack_blk";
+weapons[] = {"arifle_SDAR_F","hgun_Pistol_heavy_01_F","Binocular","Throw","Put"};
+magazines[] = {"SmokeShellBlue","SmokeShellBlue","Chemlight_blue","11Rnd_45ACP_Mag","11Rnd_45ACP_Mag","30Rnd_556x45_Stanag_red","30Rnd_556x45_Stanag_red","30Rnd_556x45_Stanag_red","30Rnd_556x45_Stanag_red","30Rnd_9x21_Mag","30Rnd_9x21_Mag","30Rnd_9x21_Mag","30Rnd_9x21_Mag","30Rnd_9x21_Mag"};
+items[] = {"FirstAidKit","MineDetector","ToolKit","FirstAidKit","FirstAidKit"};
+linkedItems[] = {"V_RebreatherB","","G_B_Diving","ItemMap","ItemCompass","ItemWatch","ItemRadio","ItemGPS","NVGoggles_OPFOR","optic_MRD","muzzle_snds_acp"};
+
+	};
+
+	class EAST
+	{
+		displayName = "DIVER";
+		icon = "";
+		role = "Divers";
+		uniformClass = "U_O_Wetsuit";
+		backpack = "B_FieldPack_blk";
+weapons[] = {"arifle_SDAR_F","hgun_Pistol_heavy_01_F","Binocular","Throw","Put"};
+magazines[] = {"SmokeShellBlue","SmokeShellBlue","Chemlight_blue","11Rnd_45ACP_Mag","11Rnd_45ACP_Mag","30Rnd_556x45_Stanag_red","30Rnd_556x45_Stanag_red","30Rnd_556x45_Stanag_red","30Rnd_556x45_Stanag_red","30Rnd_9x21_Mag","30Rnd_9x21_Mag","30Rnd_9x21_Mag","30Rnd_9x21_Mag","30Rnd_9x21_Mag"};
+items[] = {"FirstAidKit","MineDetector","ToolKit","FirstAidKit","FirstAidKit"};
+linkedItems[] = {"V_RebreatherB","","G_B_Diving","ItemMap","ItemCompass","ItemWatch","ItemRadio","ItemGPS","NVGoggles_OPFOR","optic_MRD","muzzle_snds_acp"};
+
+	};
+};
+ class CfgRoles
+ {
+      class Divers
+      {
+           displayName = "Divers";
+           icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa";
+      };
+ };
+
